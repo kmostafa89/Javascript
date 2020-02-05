@@ -1,0 +1,134 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
+
+/* assign variables for success and error */
+:root {
+	--success-color: #02df5e;
+	--error-color: #f1b1aa;
+	--page-gradient: linear-gradient(to top right, rgb(77, 14, 77), rgb(211, 211, 211));
+	--form-gradient: linear-gradient(to bottom right, rgb(88, 35, 88), rgb(43, 37, 28));
+	--button-gradient: linear-gradient(to top right, rgb(158, 78, 158), rgb(43, 37, 28));
+}
+
+/* add border box to every elemenent in the html */
+* {
+	box-sizing: border-box;
+}
+
+/* choose a background color, change the font, and align the form in the center of the page */
+body {
+	background-color: #f9fafb;
+	font-family: 'Open Sans';
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	min-height: 100vh;
+	margin: 0;
+	background-image: var(--page-gradient);
+}
+
+/* round the corner of the container and add shadow to the container */
+.container {
+	background-color: #fff;
+	border-radius: 5px;
+	box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+	background-image: var(--form-gradient);
+}
+
+/* bring the headline of the form to the center and take care of the margin of the header */
+h2 {
+	text-align: center;
+	margin: 0 0 20px;
+	font-family: 'OPen Sans';
+	color: white;
+}
+
+/* add padding to the form  */
+.form {
+	padding: 30px 40px;
+}
+
+/* add margin and padding to form elemenets which have classes of form-control also make their position relative */
+.form-control {
+	margin-bottom: 15px;
+	padding-bottom: 35px;
+	position: relative;
+}
+
+/* fix the labels of the form elements , these will be in label tags */
+.form-control label {
+	color: white;
+	display: block;
+	margin-bottom: 5px;
+}
+
+/* style the input of the form elemenets, again remember the form elements have classes of form-control so you would want to style .form-control input */
+.form-control input {
+	border: 1x solid gainsboro;
+	border-radius: 4px;
+	display: block;
+	width: 100%;
+	padding: 10px;
+	font-size: 14px;
+	width: 100%;
+	transition: ease-in-out 0.01s;
+	border-style: groove;
+	border-image: none;
+	cursor: text;
+}
+
+/* remove the current focus style from the input of form control hint: you can use :focus */
+.form-control input:focus {
+	outline: 0;
+	border-color: rgb(148, 0, 0);
+	width: 100%;
+}
+
+.form-control input:hover {
+	outline: 0;
+	border-color: #777;
+	width: 100%;
+}
+
+/* the input box should change color based on your validation rules, create a success and error class for your input to decorate them accordingly */
+.form-control.success input {
+	border-color: var(--success-color);
+}
+
+.form-control.error input {
+	border-color: var(--error-color);
+}
+
+/* style the error message, make sure the error message is visible only when error class is passed on  */
+.form-control small {
+	color: var(--error-color);
+	position: absolute;
+	padding-top: 10px;
+	margin-top: 10px;
+	bottom: 0;
+	left: 0;
+	visibility: hidden;
+}
+
+/* hiding the small by default */
+.form-control.error small {
+	visibility: visible;
+}
+
+/*  style the button of the form */
+.form button {
+	cursor: pointer;
+	background-color: ;
+	color: #fff;
+	border: 2px solid #3498db;
+	border-radius: 2px;
+	display: block;
+	font-size: 16px;
+	padding: 10px;
+	margin-top: 20px;
+	width: 50%;
+	transition: ease-in-out 0.1s all;
+	background-image: var(--button-gradient);
+}
+.form button:hover {
+	width: 100%;
+}
